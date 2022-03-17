@@ -20,11 +20,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(this.auth()){
-            callDashboard();
-        }else {
+        System.out.println("##########################################################");
+//        if(this.auth()){
+//            this.callDashboard();
+//        }else {
             this.callLogin();
-        }
+//        }
     }
 
 

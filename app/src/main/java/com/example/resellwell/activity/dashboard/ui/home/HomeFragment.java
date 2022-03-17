@@ -9,12 +9,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewbinding.ViewBindings;
 
+import com.example.resellwell.R;
 import com.example.resellwell.databinding.FragmentHomeBinding;
+import com.google.android.material.navigation.NavigationView;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+
+    private TextView txtUserName;
+    private TextView txtUserEmail;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -23,6 +29,8 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        System.out.println("HOME AQ 22222222222222222222222222");
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
