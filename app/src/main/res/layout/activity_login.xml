@@ -11,14 +11,16 @@
         android:layout_width="347dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         android:ems="10"
         android:hint="@string/login_name"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/textView2"
@@ -29,6 +31,8 @@
         android:text="@string/login_in_your_account"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -37,14 +41,16 @@
         android:layout_width="347dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:drawableLeft="@drawable/ic_baseline_lock_24"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
         android:ems="10"
         android:hint="@string/login_password"
         android:inputType="textPassword"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/bt_login_entra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/bt_login_entra"

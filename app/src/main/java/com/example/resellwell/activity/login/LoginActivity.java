@@ -30,8 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
-
     private void callDashboard(){
         startActivity(new Intent(this, DashboardActivity.class ));
     }
