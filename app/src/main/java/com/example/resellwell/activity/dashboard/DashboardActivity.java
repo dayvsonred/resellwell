@@ -23,8 +23,9 @@ public class DashboardActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityDashboardBinding binding;
 
-    private TextView txtUserName;
-    private TextView txtUserEmail;
+
+    private TextView navUserEmail;
+    private TextView navUsername;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,13 +55,9 @@ public class DashboardActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        //View view = View.inflate(R.id.nav_host_fragment_content_dashboard,  );
-
         NavigationView navigationView2 = (NavigationView) findViewById(R.id.nav_view);
         View headerView = navigationView2.getHeaderView(0);
-        TextView navUsername = (TextView) headerView.findViewById(R.id.txt_user_name);
-        navUsername.setText("Dayvson Vicente");
-
+        this.getUserDados(headerView);
     }
 
     @Override
@@ -80,16 +77,13 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        System.out.println("88888888888888888888888888888888888888888888");
-        //this.getUserDados();
     }
 
-    private void getUserDados(){
-//        txtUserName = findViewById(R.id.txt_user_name);
-////        private TextView txtUserEmail;
-//
-//
-//        txtUserName.setText("Dayvson Vicente");
+    private void getUserDados(View headerView){
+        navUserEmail = (TextView) headerView.findViewById(R.id.txt_user_email);
+        navUsername = (TextView) headerView.findViewById(R.id.txt_user_name);
 
+        navUsername.setText("Dayvson Vicente");
+        navUserEmail.setText("Dayvson.red@gmail.com");
     }
 }
