@@ -24,4 +24,14 @@
     <string name="forgot_password">Esqueceu a senha?</string>
     <string name="login_terms_of_use">Termos de uso</string>
 
+    <string name="menu_start">Início</string>
+    <string name="menu_customers">Clientes</string>
+    <string name="menu_sales">Vendas</string>
+    <string name="menu_reports">Relatórios</string>
+    <string name="menu_settings">Configurações</string>
+    <string name="menu_exit">Sair</string>
+    <string name="menu_about">Sobre</string>
+    <string name="menu_version">Versão</string>
+
+
 </resources>
