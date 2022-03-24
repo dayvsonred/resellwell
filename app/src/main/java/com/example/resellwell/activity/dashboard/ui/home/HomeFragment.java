@@ -31,7 +31,6 @@ public class HomeFragment extends Fragment {
         View root = binding.getRoot();
 
         System.out.println("HOME AQ 22222222222222222222222222");
-
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
