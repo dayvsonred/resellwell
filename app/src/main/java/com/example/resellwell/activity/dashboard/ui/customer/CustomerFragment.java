@@ -3,12 +3,18 @@ package com.example.resellwell.activity.dashboard.ui.customer;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.resellwell.R;
+import com.example.resellwell.activity.dashboard.ui.adapter.CustomerAdapter;
+import com.example.resellwell.model.Customer;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +22,10 @@ import com.example.resellwell.R;
  * create an instance of this fragment.
  */
 public class CustomerFragment extends Fragment {
+
+    private CustomerAdapter adapter;
+
+    private RecyclerView recyclerViewCustomerList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +35,9 @@ public class CustomerFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    private ArrayList<Customer> listaContatos = new ArrayList<>();
 
     public CustomerFragment() {
         // Required empty public constructor
@@ -61,6 +74,64 @@ public class CustomerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_customer, container, false);
+        View view = inflater.inflate(R.layout.fragment_customer, container, false);
+
+        //start list customers
+        recyclerViewCustomerList = view.findViewById(R.id.recyclerViewCustomerList);
+        //usuariosRef = ConfiguracaoFirebase.getFirebaseDatabase().child("usuarios");
+
+        Customer cus1 = new Customer("1", "nome", "email", "senha", "foto", "123132132" );
+        Customer cus2 = new Customer("2", "nome2", "email2", "senha2", "foto2", "23132133" );
+        listaContatos.add(cus1);
+        listaContatos.add(cus2);
+
+        //configurar adapter
+        adapter = new CustomerAdapter(listaContatos, getActivity() );
+
+        //configurar recyclerview
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager( getActivity() );
+        recyclerViewCustomerList.setLayoutManager( layoutManager );
+        recyclerViewCustomerList.setHasFixedSize( true );
+        recyclerViewCustomerList.setAdapter( adapter );
+
+        return view;
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //recuperarContatos();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        //usuariosRef.removeEventListener( valueEventListenerContatos );
+    }
+
+    public void recuperarContatos(){
+
+//        valueEventListenerContatos = usuariosRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                for ( DataSnapshot dados: dataSnapshot.getChildren() ){
+//
+//                    Usuario usuario = dados.getValue( Usuario.class );
+//                    listaContatos.add( usuario );
+//
+//                }
+//
+//                adapter.notifyDataSetChanged();
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+
     }
 }
